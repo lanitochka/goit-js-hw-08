@@ -13,6 +13,7 @@ const formData = {};
 
 
 function onFormSubmit(e) {
+
     e.preventDefault();
 
     formData.email = form.email.value;
@@ -31,12 +32,12 @@ function onFormSubmit(e) {
 function onTextareaInput(e) {   
 
     formData[e.target.name] = e.target.value;
-
     localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
 }
 
 
 function populateTextarea() {
+    
     const savedForm = JSON.parse(localStorage.getItem(STORAGE_KEY));   
 
     if (savedForm) {
